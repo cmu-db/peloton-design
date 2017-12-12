@@ -47,7 +47,7 @@ The Zone Maps are stored in catalog to make them transactional. Earlier designs 
    - Conjunction and Simple Predicate tests just like table scan translator tests but now with Zone maps created which check for correctness.
 
 ## Trade-offs and Potential Problems
-By removing the storage of zone maps in catalog we trade off performance for transaction semantics. Some potential problems are also discussed in Future Work.
+By removing the storage of zone maps in catalog we trade off some performance for transaction semantics. Some potential problems are also discussed in Future Work. Storage in catalog in the absence of array types also incurs an over head of serialization and deserialization of the min and max from VARCHAR to their original types.
 
 ## Future Work
 1. Replacing the BWTree Index lookup with a Hash Map lookup to provide O(1) lookup and unnecessary copying of keys for index lookup.
